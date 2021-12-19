@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "3zUkVOFntujUEUJ/PdXtKYCNoas8qBlU0cizRT0aKe89RFzxzopIbBSMp4BbiphYZA7EpEPXXRQb4Jc7+/kEcw==",
+  "dgSpecHash": "8hYARNdLn84TkMQ8MT0gnJjafYp2FJs0dnUOaIa5E7AaeSuBv98YBmlHmvZ8Nuw3HQ/AYn+SpWyWst+NFfLwJQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\tykesjoh\\private\\dotNetTesting\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tykesjoh\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\tykesjoh\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\tykesjoh\\.nuget\\packages\\mapster\\7.2.0\\mapster.7.2.0.nupkg.sha512",
+    "C:\\Users\\tykesjoh\\.nuget\\packages\\mapster.core\\1.2.0\\mapster.core.1.2.0.nupkg.sha512",
     "C:\\Users\\tykesjoh\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\tykesjoh\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.12\\microsoft.entityframeworkcore.5.0.12.nupkg.sha512",
     "C:\\Users\\tykesjoh\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.12\\microsoft.entityframeworkcore.abstractions.5.0.12.nupkg.sha512",
@@ -25,6 +28,7 @@
     "C:\\Users\\tykesjoh\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\tykesjoh\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\tykesjoh\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
+    "C:\\Users\\tykesjoh\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\tykesjoh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
   ],
   "logs": []
