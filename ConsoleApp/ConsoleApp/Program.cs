@@ -1,9 +1,6 @@
 ﻿using System;
 using ConsoleApp.MappingTests;
 using Npgsql;
-using ConsoleApp.MappingTests;
-
-
 
 namespace ConsoleApp
 {
