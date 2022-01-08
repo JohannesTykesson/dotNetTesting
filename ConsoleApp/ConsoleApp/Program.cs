@@ -13,6 +13,8 @@ namespace ConsoleApp
         {
             var benchmark = new MapperBenchmark();
             benchmark.BenchmarkMappers();
+            benchmark.BenchmarkMappersOnlyMapping();
+            benchmark.BenchmarkMappersOnlyMappingEasyMapping();
         }
     }
 }
