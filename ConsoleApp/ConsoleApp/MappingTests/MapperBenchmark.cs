@@ -34,7 +34,7 @@ namespace ConsoleApp.MappingTests
         {
             Stopwatch sw = new Stopwatch();
             double time = 0;
-            for (var i = 0; i< 1000; i++) {
+            for (var i = 0; i< 10000; i++) {
                 sw.Start();
                 var config = new TypeAdapterConfig();
                 config.NewConfig<Person, PersonDto>()
@@ -52,7 +52,7 @@ namespace ConsoleApp.MappingTests
             sw.Reset();
 
             time = 0;
-            for (var i = 0; i< 1000; i++) {
+            for (var i = 0; i< 10000; i++) {
                 sw.Start();
                 var config = new MapperConfiguration(cfg =>
                 {
@@ -81,7 +81,7 @@ namespace ConsoleApp.MappingTests
                 .Map(dest => dest.Name,
                     src => $"{src.FirstName} {src.LastName}");
             var mapper = new MapsterMapper.Mapper(config);
-            for (var i = 0; i< 1000; i++) {
+            for (var i = 0; i< 10000; i++) {
                 sw.Start();
                 var personDto = mapper.Map<PersonDto>(person);
                 sw.Stop();
@@ -102,7 +102,7 @@ namespace ConsoleApp.MappingTests
                     .ForMember(p => p.SpouseName, opt => opt.MapFrom(dto => dto.Spouse.LastName));
             });
             IMapper mapper2 = new Mapper(config2);
-            for (var i = 0; i< 1000; i++) {
+            for (var i = 0; i< 10000; i++) {
                 sw.Start();
                 var personDto2 = mapper2.Map<PersonDto>(person);
                 sw.Stop();
@@ -119,7 +119,7 @@ namespace ConsoleApp.MappingTests
             var config = new TypeAdapterConfig();
             config.NewConfig<EasyPerson, EasyPersonDto>();
             var mapper = new MapsterMapper.Mapper(config);
-            for (var i = 0; i< 1000; i++) {
+            for (var i = 0; i< 10000; i++) {
                 sw.Start();
                 var personDto = mapper.Map<EasyPersonDto>(easyPerson);
                 sw.Stop();
@@ -136,7 +136,7 @@ namespace ConsoleApp.MappingTests
                 cfg.CreateMap<EasyPerson, EasyPersonDto>();
             });
             IMapper mapper2 = new Mapper(config2);
-            for (var i = 0; i< 1000; i++) {
+            for (var i = 0; i< 10000; i++) {
                 sw.Start();
                 var personDto2 = mapper2.Map<EasyPersonDto>(easyPerson);
                 sw.Stop();
