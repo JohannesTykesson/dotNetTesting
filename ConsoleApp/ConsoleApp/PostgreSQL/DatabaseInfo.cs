@@ -8,6 +8,6 @@ namespace ConsoleApp.PostgreSQL
 {
     public sealed class DatabaseInfo
     {
-        public static string ConnString = "Host=db;Username=postgres;Password=password;Database=db";
+        public static string ConnString = "Host=db;Username=postgres;Password=pw;Database=testDb";
     }
 }

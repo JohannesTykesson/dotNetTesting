@@ -1,6 +1,9 @@
 ﻿using System;
 using ConsoleApp.MappingTests;
+using ConsoleApp.PostgreSQL;
 using Npgsql;
+
+Console.WriteLine("Starting Program");
 
 // Mappers benchmarking below
 /*
@@ -11,7 +14,8 @@ benchmark.BenchmarkMappersOnlyMappingEasyMapping();
 */
 
 
-// DB code below
+// manual DB code below
+/*
 Console.WriteLine("Initiating db conn");
 var cs = "Host=db;Username=postgres;Password=pw;Database=testDb";
 using var con = new NpgsqlConnection(cs);
@@ -21,3 +25,10 @@ var sql = "SELECT version()";
 using var cmd = new NpgsqlCommand(sql, con);
 var version = cmd.ExecuteScalar().ToString();
 Console.WriteLine($"PostgreSQL version: {version}");
+*/
+
+
+var dbRunner = new DatabaseRunner();
+await dbRunner.CheckInfoInDb();
+
+Console.WriteLine("Stopping program");
