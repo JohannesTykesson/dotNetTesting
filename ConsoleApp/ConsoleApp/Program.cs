@@ -30,6 +30,6 @@ Console.WriteLine($"PostgreSQL version: {version}");
 var dbRunner = new DatabaseRunner();
 await dbRunner.CheckInfoInDb();
 await dbRunner.SeedDatabase();
-await dbRunner.Benchmark();
+dbRunner.Benchmark();
 
 Console.WriteLine("Stopping program");

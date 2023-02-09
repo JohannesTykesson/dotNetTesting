@@ -56,7 +56,7 @@ namespace ConsoleApp.PostgreSQL
             await _context.SaveChangesAsync();
         }
 
-        public async Task Benchmark() {
+        public void Benchmark() {
             var word = Lorem.Words(1,1);
                 
             var watch = System.Diagnostics.Stopwatch.StartNew();
@@ -69,7 +69,7 @@ namespace ConsoleApp.PostgreSQL
 
             watch = System.Diagnostics.Stopwatch.StartNew();
             var q2 = _context.Posts.Where(post => 
-                post.TsVector.Matches(word)).Count();
+                post.TsVector.Matches(EF.Functions.ToTsQuery(word))).Count();
 
             watch.Stop();
             var elapsedMsTsVector = watch.ElapsedMilliseconds;
