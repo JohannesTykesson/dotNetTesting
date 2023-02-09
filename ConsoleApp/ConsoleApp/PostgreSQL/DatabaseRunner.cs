@@ -37,19 +37,19 @@ namespace ConsoleApp.PostgreSQL
 
         public async Task SeedDatabase() {
             // Adding fake blogs
-            for (var i = 0; i < 10000; i++) {
+            for (var i = 0; i < 1000; i++) {
                 var blog = new Blog() {
                     BlogId = Guid.NewGuid(),
                     Url = "fakeurl.com",
                     Posts = new List<Post>()
                 };
-                for (var j = 0; j < 10; j++) {
-                    blog.Posts.Add(new Post() {
-                            Content = Lorem.Words(10, 50),
-                            PostId = Guid.NewGuid(),
-                            Title = "LameTitle"
-                        }
-                    );
+                for (var j = 0; j < 100; j++) {
+                    var post = new Post() {
+                        Content = Lorem.Words(10, 50).ToLower(),
+                        PostId = Guid.NewGuid(),
+                        Title = ""
+                    };
+                    blog.Posts.Add(post);
                 }
                 await _context.Blogs.AddAsync(blog);
             }
@@ -57,26 +57,21 @@ namespace ConsoleApp.PostgreSQL
         }
 
         public void Benchmark() {
-            var word = Lorem.Words(1,1);
+            Console.WriteLine("Starting the search");
+            var word = Lorem.Words(1,1).ToLower();
                 
             var watch = System.Diagnostics.Stopwatch.StartNew();
-
-            var q = _context.Posts.Where(post => 
-                post.Content.Contains(word)).Count();
-
+            var q = _context.Posts.AsQueryable().Where(post => post.Content.Contains(word)).Count();
             watch.Stop();
             var elapsedMs = watch.ElapsedMilliseconds;
 
             watch = System.Diagnostics.Stopwatch.StartNew();
-            var q2 = _context.Posts.Where(post => 
-                post.TsVector.Matches(EF.Functions.ToTsQuery(word))).Count();
-
+            var q2 = _context.Posts.AsQueryable().Where(post => post.TsVector.Matches(EF.Functions.ToTsQuery(word))).Count();
             watch.Stop();
             var elapsedMsTsVector = watch.ElapsedMilliseconds;
-
-
-            Console.WriteLine(q);
-            Console.WriteLine(q2);
+            
+            Console.WriteLine("Contains: " + q );
+            Console.WriteLine("TsVector: " + q2);
             Console.WriteLine("Contains: " + elapsedMs);
             Console.WriteLine("TsVector: " + elapsedMsTsVector);
         }
