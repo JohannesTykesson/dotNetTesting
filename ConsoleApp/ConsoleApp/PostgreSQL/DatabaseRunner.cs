@@ -33,5 +33,9 @@ namespace ConsoleApp.PostgreSQL
                 Console.WriteLine(ex.StackTrace);
             }
         }
+
+        public async Task SeedDatabase() {
+
+        }
     }
 }
